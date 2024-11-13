@@ -1,0 +1,23 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  /* Set your desired background color */
+  color: white;
+  padding: 20px 0;
+  font-size: 12px;
+  text-align: middle;
+  margin-top: auto;
+  /* Push the footer to the bottom */
+}
+
+footer h3 {
+  font-size: 18px;
+  /* Footer heading 3 font size */
+}
+
+footer ul li {
+  font-size: 14px;
+  /* List item font size */
+}
