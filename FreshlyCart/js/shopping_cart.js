@@ -60,7 +60,6 @@ function updateCartDisplay() {
 }
 
 
-
 function addToCart(itemId) {
     var cart = getShoppingCart();
     if (cart[itemId]) {

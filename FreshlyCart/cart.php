@@ -18,6 +18,7 @@ $itemDetails = [];
 $totalPrice = 0;
 
 if (!empty($cartItems)) {
+
     $placeholders = implode(',', array_fill(0, count($cartItems), '?'));
     $sql = "SELECT * FROM item WHERE item_id IN ($placeholders)";
     $stmt = $dblink->prepare($sql);

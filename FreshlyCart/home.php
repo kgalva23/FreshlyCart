@@ -14,7 +14,10 @@ $_SESSION["active_page"] = "Home";
 
 $dblink = db_connect();
 
-$sql = "SELECT item.*, image.image AS ImagePath FROM item LEFT JOIN image ON item.image_id = image.image_id";
+$sql = "SELECT item.*, image.image AS ImagePath 
+        FROM item 
+        LEFT JOIN image ON item.image_id = image.image_id::text";
+
 $stmt = $dblink->prepare($sql);
 $stmt->execute();
 $items = [];
@@ -90,7 +93,7 @@ $dblink = null; // Close the PDO connection
             <?php foreach ($items as $item) : ?>
                 <div class="col-md-6 mb-4">
                     <div class="card card-flex">
-                        <img src="<?php echo isset($item['ImagePath']) ? htmlspecialchars($item['ImagePath']) : 'images/apple.jpg'; ?>" alt="Item Image" height="50" width="50" class="rounded-circle">
+                    <img src="<?php echo isset($item['ImagePath']) ? htmlspecialchars($item['ImagePath']) : 'images/' . htmlspecialchars($item['name']) . '.jpg'; ?>" alt="Item Image" height="50" width="50" class="rounded-circle">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo htmlspecialchars($item['name']); ?></h5>
                             <p class="card-text"><?php echo htmlspecialchars($item['description']); ?></p>
