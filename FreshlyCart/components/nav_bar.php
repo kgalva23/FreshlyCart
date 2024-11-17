@@ -8,6 +8,7 @@ function generate_nav_bar()
         "Orders" => "orders.php",
         "Account" => "account.php",
         "Logout" => "logout.php",
+        "Contact" => "contact.php",
     );
 
     echo '<nav class="navbar navbar-expand-lg navbar-fixed-top bg-body tertiary bg-white shadow-lg border rounded" style="height: 60px;">
